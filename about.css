@@ -59,26 +59,46 @@ nav img{
 .text-box{
     width:90%;
     color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    position: relative;
+    margin-left: 70px;
     text-align: center;
+    border: 6px solid white;
 }
 
 .text-box h1{
     font-size: 62px;
-
+    margin-top: 30px;
+    margin-bottom: 85px;
 }
 
-.text-box p{
+.text-box > .colunms h4{
     margin: 10px 0 40px;
+    margin: 5px;
+    margin-right: 20px;
+    width: 350px;
+    font-size: 18px;
+    color: #fff;
+    display: inline-block;
+}
+
+.text-box > .colunms p{
+    margin: 10px 0 40px;
+    margin: 5px;
+    margin-right: 20px;
+    width: 350px;
     font-size: 14px;
     color: #fff;
+    display: inline-block;
 }
 
 .hero-btn{
-    display: inline-block;
+    display: flex;
+    text-align: center;
+    margin-top: 13px;
+    margin-bottom: 100px;
+    margin-right: 44%;
+    margin-left: 44%;
+    display: grid;
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
