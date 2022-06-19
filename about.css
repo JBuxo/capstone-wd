@@ -58,9 +58,10 @@ nav img{
 
 .text-box{
     width:90%;
+    max-width: 1500px;
     color: #fff;
     position: relative;
-    margin-left: 70px;
+    margin: auto;
     text-align: center;
     border: 6px solid white;
 }
@@ -69,9 +70,12 @@ nav img{
     font-size: 62px;
     margin-top: 30px;
     margin-bottom: 85px;
+    position: static;
 }
 
 .text-box > .colunms h4{
+    position: relative;
+    margin-top: auto;
     margin: 10px 0 40px;
     margin: 5px;
     margin-right: 20px;
@@ -82,19 +86,23 @@ nav img{
 }
 
 .text-box > .colunms p{
+    position: static;
     margin: 10px 0 40px;
-    margin: 5px;
+    margin-top: 10px;
     margin-right: 20px;
     width: 350px;
     font-size: 14px;
     color: #fff;
     display: inline-block;
+    word-spacing: normal;
+    text-align: center;
+    vertical-align: text-top;
 }
 
 .hero-btn{
     display: flex;
     text-align: center;
-    margin-top: 13px;
+    margin-top: auto;
     margin-bottom: 100px;
     margin-right: 44%;
     margin-left: 44%;
@@ -102,6 +110,7 @@ nav img{
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
+    border-radius: 5px;
     padding: 12px 34px;
     font-size: 13px;
     background: transparent;
@@ -120,6 +129,10 @@ nav .fa{
 }
 
 @media(max-width: 700px){
+    .header {
+        max-width: fit-content;
+    }
+
     .text-box h1{
         font-size: 20px;
     }

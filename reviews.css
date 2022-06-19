@@ -81,9 +81,10 @@ nav img{
     display: inline-block;
     text-decoration: none;
     color: #fff;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
     padding: 12px 34px;
-    font-size: 13px;
+    font-size: 20px;
     background: transparent;
     position: relative;
     cursor: pointer;
@@ -99,7 +100,28 @@ nav .fa{
     display: none;
 }
 
+.text-box h2{
+    font-size: medium;
+    margin-bottom: 30px;
+}
+
+.text-box h3{
+    text-align: left;
+    font-size: 30px;
+}
+
+.text-box p{
+    text-align: left;
+    font-size: 15px;
+}
+
+
+
 @media(max-width: 700px){
+    .header {
+        max-width: fit-content;
+    }
+
     .text-box h1{
         font-size: 20px;
     }

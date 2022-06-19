@@ -68,7 +68,11 @@ nav img{
 
 .text-box h1{
     font-size: 62px;
+    margin-bottom: 100px;
+}
 
+.text-box h4{
+    margin-bottom: 20px;
 }
 
 .text-box p{
@@ -76,6 +80,22 @@ nav img{
     font-size: 14px;
     color: #fff;
 }
+
+.insta > i, .insta > h4{
+    display: inline-block;
+    text-align: center;
+}
+
+.fa-brands{
+    font-size: 25px;
+    margin-right: none;
+}
+
+.facebook > i, .facebook > h4{
+    display: inline-block;
+    text-align: center;
+}
+
 
 .hero-btn{
     display: inline-block;
@@ -99,7 +119,16 @@ nav .fa{
     display: none;
 }
 
+.text-box p{
+    font-size: medium;
+    font-style: italic;
+}
+
 @media(max-width: 700px){
+    .header {
+        max-width: fit-content;
+    }
+
     .text-box h1{
         font-size: 20px;
     }
