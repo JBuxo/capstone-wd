@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Queen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/fb38530c19.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images\logo.jpg"></a>
+            <div class="nav-links" id="navLinks"> 
+                <i class="fa fa-square-xmark" style="color: white;" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="reviews.html">REVIEWS</a></li>
+                    <li><a href="category.html">SHOP BY CATEGORY</a></li>
+                    <li><a href="gift-cards.html">GIFT CARDS</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" style="color: white;" onclick="showMenu()"></i>
+        </nav>
+
+    <div class="text-box">
+        <h1>HANDCRAFTED COOKIES</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices nunc convallis nunc porttitor, in fringilla tortor accumsan. In sagittis, ipsum ac consectetur convallis</p>
+        <a href="" class="hero-btn">Visit Us To Know More</a>
+    </div>
+
+    </section>    
+    
+
+    <!-------------JAVA FOR MENU------------->
+    <script>
+        var navLinks = document.getElementById("navLinks")
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>
