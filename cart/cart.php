@@ -22,10 +22,12 @@ require_once('./component.php')
 <div class="container">
     <div class="row text-center py-5">
         <?php
-        component();
-        component();
-        component();
-        component();
+        component(productname:"6 cookies",productprice:20,productimg:"./images-php/logo++.jpg");
+        component(productname:"12 cookies",productprice:40,productimg:"./images-php/logo++.jpg");
+        component(productname:"24 cookies",productprice:60,productimg:"./images-php/logo++.jpg");
+        component(productname:"36 cookies",productprice:80,productimg:"./images-php/logo++.jpg");
+        component(productname:"48 cookies",productprice:100,productimg:"./images-php/logo++.jpg");
+        component(productname:"60+ cookies",productprice:'(contact for more info)',productimg:"./images-php/logo++.jpg");
         ?>
     </div>
 </div>
