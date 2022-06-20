@@ -6,7 +6,7 @@ function component(){
     <form action=\"cart.php\" method=\"post\">
         <div class=\"card shadow\">
             <div>
-                <img src=\"images-php5/logo++.jpg\" alt=\"image\" class=\"img-fluid card-img-top\">
+                <img src=\"images-php/logo++.jpg\" alt=\"image\" class=\"img-fluid card-img-top\">
             </div>
             <div class=\"card-boy\">
                 <h5 class=\"card-title\">cookies</h5>
