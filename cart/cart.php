@@ -1,6 +1,14 @@
 <?php
 
-require_once('./component.php')
+require_once('./database.php');
+require_once('./component.php');
+
+
+
+
+
+//Create instance of database class
+$database=new database(dbname:"productdb", tablename:"producttb");
 
 ?>
 
