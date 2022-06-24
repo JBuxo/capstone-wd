@@ -64,6 +64,19 @@ nav img{
     margin: auto;
     text-align: center;
     border: 6px solid white;
+    animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+
+    }
+    
+    to{
+        opacity: 1;
+
+    }
 }
 
 .text-box h1{
