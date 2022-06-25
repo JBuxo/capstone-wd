@@ -79,9 +79,13 @@ if(isset($_POST['remove'])){
                         <?php
                         if(isset($_SESSION['cart'])){
                             $count=count($_SESSION['cart']);
-                            echo"<h6>Price ($count items)</h6>";
-                        }else{
-                            echo"<h6>Price (0 items)</h6>";
+                        }
+                        if($count>0){
+                            echo"<h6>Cart : ($count items)</h6>";
+                        }
+                        if($count==0){
+                            echo"<h6>Cart : (Empty!)</h6>";
+                            $delivery='0';
                         }
                         ?>
 

@@ -2,7 +2,7 @@
 
 function component($productname, $productprice, $productimg, $productid){
     $element="
-    <div class=\"col-md-3 col-sm-6 my-3 my-md-0\">
+    <div class=\"col-md-3 col-sm-6 my-3 my-md-3\">
     <form action=\"cart.php\" method=\"post\">
         <div class=\"card shadow\">
             <div>
@@ -17,11 +17,9 @@ function component($productname, $productprice, $productimg, $productid){
                     <i class=\"fas fa-star\"></i>
                     <i class=\"fas fa-star\"></i>
                 </h6>
-                <p class=\"card-text\">
-                    Theme:xxxxxxx
-                </p>
+
                 <h5>
-                    <span class=\"price\">$$productprice</span>
+                    <span class=\"price\">$productprice</span>
                 </h5>
 
                 <button type=\"submit\" class=\"btn btn-warning my-3\"name=\"add\">Add To Cart<i class=\"fas fa-shopping-cart\"></i></button>
