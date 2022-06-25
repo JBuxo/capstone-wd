@@ -44,9 +44,9 @@ class database{
 
     //sql to create new table
     $sql="CREATE TABLE IF NOT EXISTS $tablename
-          (id INT(11)NOT NULL AUTO_INCREMENT PRIMARY KEY
+          (id INT(11)NOT NULL AUTO_INCREMENT PRIMARY KEY,
           product_name VARCHAR(25)NOT NULL,
-          product_price FLOAT,
+          product_price VARCHAR(25),
           product_image VARCHAR(100)
           );";
           
@@ -61,6 +61,18 @@ class database{
 
 
      
+    }
+
+
+    //get product from the database
+    public function getData(){
+        $sql="SELECT * FROM $this->tablename";
+
+        $result=mysqli_query($this->con, $sql);
+
+        if(mysqli_num_rows($result)>0){
+            return$result; 
+        }
     }
 
 }

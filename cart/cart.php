@@ -1,5 +1,9 @@
 <?php
 
+//start session
+session_start();
+
+
 require_once('./database.php');
 require_once('./component.php');
 
@@ -9,6 +13,42 @@ require_once('./component.php');
 
 //Create instance of database class
 $database=new database(dbname:"productdb", tablename:"producttb");
+
+
+if(isset($_POST['add'])){
+   /// print_r($_POST['product_id']);
+   if(isset($_SESSION['cart'])){
+
+    $item_array_id=array_column($_SESSION['cart'], column_key:"product_id");
+
+    if(in_array($_POST['product_id'], $item_array_id)){
+        echo '<script>alert("Product is already in the cart!")</script>';
+        echo "<script>window.location='cart.php</script>";
+    }else{
+        $count=count($_SESSION['cart']);
+        $item_array=array(
+            'product_id'=>$_POST['product_id']
+        );
+
+        $_SESSION['cart'][$count]=$item_array;
+        
+    
+    }
+
+
+
+   }else{
+    $item_array=array(
+        'product_id'=>$_POST['product_id']
+    );
+
+    //Create new session variable
+    $_SESSION['cart'][0]=$item_array;
+    
+
+   }
+
+}
 
 ?>
 
@@ -20,22 +60,22 @@ $database=new database(dbname:"productdb", tablename:"producttb");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my cart </title>
+    <title>Cart</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cartphp.css">
 </head>
 <body>
 
+
+<?php require_once("./header.php");?>
 <div class="container">
     <div class="row text-center py-5">
         <?php
-        component(productname:"6 cookies",productprice:20,productimg:"./images-php/logo++.jpg");
-        component(productname:"12 cookies",productprice:40,productimg:"./images-php/logo++.jpg");
-        component(productname:"24 cookies",productprice:60,productimg:"./images-php/logo++.jpg");
-        component(productname:"36 cookies",productprice:80,productimg:"./images-php/logo++.jpg");
-        component(productname:"48 cookies",productprice:100,productimg:"./images-php/logo++.jpg");
-        component(productname:"60+ cookies",productprice:'(contact for more info)',productimg:"./images-php/logo++.jpg");
+        $result=$database->getData();  
+        while($row=mysqli_fetch_array($result)){
+            component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+        }
         ?>
     </div>
 </div>
