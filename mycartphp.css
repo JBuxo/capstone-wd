@@ -1,7 +1,7 @@
 img{
     max-width: 100%;
     height: auto;
-    background-color: rgb(173, 149, 105);
+    background-color: rgb(255, 255, 255);
     background:radial-gradient(white 30%,rgb(173, 149, 105) 70% );
 }
 
@@ -28,12 +28,13 @@ img{
 }
 
 #info{
-    margin-top: 5%;
+    margin-left: auto;
     padding-top: 2%;
-    padding-bottom: 1%;
+    padding-bottom: 3%;
     border: 2px ;
     border-style: solid;
     border-radius: 1%;
+    height: 25%;
 }
 
 .top{

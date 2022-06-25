@@ -43,7 +43,7 @@ if(isset($_POST['remove'])){
     <div class="row px-5">
         <div class="col-md7">
             <div class="shopping-cart">
-                <h6 class="top">My Cart</h6>
+                <h6 class="top mt-5 pr-2">My Cart:</h6>
                 <hr>
 
                 <?php
@@ -71,7 +71,7 @@ if(isset($_POST['remove'])){
             </div>
         </div>
 
-            <div id="info" class="px-5">
+            <div id="info" class="px-5 mt-5">
                 <h6>PRICE DETAILS</h6>
                 <hr>
                 <div class="row price-details">
@@ -95,7 +95,7 @@ if(isset($_POST['remove'])){
 
                     </div>
                     <div class="col-md-6">
-                        <h6>--------------------------</h6>
+                        <h6>------------------------</h6>
                         <h6 class="text-success">$<?php echo"$delivery"?></h6>
                         <hr>
                         <h6 class="red"><?php echo"$total"?></h6>

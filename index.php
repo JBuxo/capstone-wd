@@ -1,3 +1,31 @@
+<?php
+session_start();
+
+
+require_once('./database.php');
+
+require_once('./component.php');
+
+$db=new database(dbname:"productdb", tablename:"producttb");
+
+if(isset($_POST['remove'])){
+    if($_GET['action']=='remove'){
+        foreach($_SESSION['cart']as $key=>$value){
+            if($value["product_id"]==$_GET['id']){
+                unset($_SESSION['cart'][$key]);
+            }
+        }
+    }
+}
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,21 +36,33 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 
 <script src="https://kit.fontawesome.com/fb38530c19.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-index.css">
 <link rel="icon" href="images/cookielogo.png">
 </head>
 <body>
+  
+
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
+<div class="w3-top bg-white">
   <div class="w3-bar" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="" class="w3-bar-item w3-button w3-hide-small" target="_blank"><i class="fa-solid fa-cart-shopping"> CART</i></a>
+    <a href="index.php" class="w3-bar-item w3-button">HOME</a>
+    <a href="index.php#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="index.php#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="index.php#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="cart.php" class="w3-bar-item w3-button w3-hide-small" ><i class="fa-solid fa-cart-shopping"> SHOP</i></a>
+    <a href="mycart.php" class="w3-bar-item w3-button w3-hide-small" ><i class="fas fa-shopping-basket"></i></a>
+                <?php
+                if(isset($_SESSION['cart'])){
+                    $count=count($_SESSION['cart']);
+                    echo"<span id=\"basket_count\">$count</span>";
+                }else{
+                    echo"<span id=\"basket_count\">0</span>";
+                }
+                ?>
+        </a>
   </div>
 
   <!-- Navbar on small screens -->
