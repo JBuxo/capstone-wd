@@ -1,7 +1,7 @@
 <?php 
 
 $to = "josebuxojr@gmail.com";
-$subject = "Cookies Queen Feedback"
+$subject = "Cookies Queen Feedback";
 
 $name = $_POST['name'];
 $email = $_POST['email'];
